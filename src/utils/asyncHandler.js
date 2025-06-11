@@ -1,6 +1,6 @@
 const asyncHandler = (requestHandler) => {
- (req, rws, next) => {
-    Promise.resolve(requestAnimationFrame(req, res, next)).
+ (req, res, next) => {
+    Promise.resolve(requestHandler(req, res, next)).
     catch((err) => next(err))
  }
 }
